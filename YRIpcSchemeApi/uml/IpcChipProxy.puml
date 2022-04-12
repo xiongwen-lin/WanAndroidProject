@@ -1,0 +1,128 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package com.smart.ipcchipproxy {
+
+ interface IIpcSchemeCore {
+
+  + init(param : Map<String, Any>)
+
+  + destroy(param : Map<String, Any>)
+
+  + connect(param : Map<String, Any>)
+
+  + disconnect(param : Map<String, Any>)
+
+  + sendCmd(cmd : String)
+
+  + configureCache() : IIpcConfigureCache
+ }
+
+ interface IIpcConfigureCache {
+  + updateDeviceConfigure(data : Map<String, Any>)
+
+  + getDeviceConfigure(deviceId : String) : Map<String, Any>?
+
+  + removeDeviceConfigure(deviceIds : List<String>)
+
+  + clearDeviceConfigure()
+
+  + getDpTool(deviceId : String) : IIpcSchemeDPTool
+ }
+
+ class BaseIpcConfigure {
+  + dps : Map<String, Any>
+  + deviceId : String
+  + model : String
+ }
+
+ interface IpcSelfDevelopSchemeService {
+
+  + createIpcSchemeCore() : IIpcSchemeCore
+ }
+
+ interface IpcTuyaSchemeService {
+
+  + createIpcSchemeCore() : IIpcSchemeCore
+ }
+
+ class DataPoint {
+  + code : String,
+  + name : String,
+  + flag : String,
+  + type : String,
+  + values : String,
+  + authority : String,
+  + desc : String,
+  + state : Any
+ }
+
+ interface IIpcSchemeDPTool {
+
+  + addDps(dps : List<DataPoint>)
+
+  + getDp(dpId : String) : DataPoint
+
+  + isSupport(dpId : String) : Boolean
+ }
+
+ interface IIpcSchemeResultCallback {
+
+  + onSuccess(code: String? = null, result : String? = null)
+
+  + onError(code : String? = null, error : String? = null)
+ }
+
+ class IpcDPCmdResult<T> {
+   + deviceId : String,
+   + data : T
+ }
+
+ class DeviceConfigureModel {
+  + dps : List<DataPoint>
+ }
+
+}
+
+package com.smart.ipcselfdevelopscheme {
+
+ class YRIpcConfigure {
+  + uid : String
+  + serverDomain : String
+  + serverPort : Int
+  + secret : String
+  + modelType : Int
+  + connType : ConnType
+ }
+
+ class YRIpcConfigureCache {
+
+  + getIpcConfigure(deviceId : String) : YRIpcConfigure
+ }
+
+ class YRIpcConnectionManager {
+
+  + initP2P(uid : String, url : String, port : Int)
+
+  + destroyP2P()
+
+  + connectP2P(deviceId : String)
+
+  + disconnectP2P((deviceId : String)
+ }
+
+ class YRIpcDPCmdData<T> {
+  + deviceId : String,
+  + data : T
+ }
+
+ class YRDeviceConfigureModel {
+  + model : String
+  + cmdType : Int
+  + modelType : Int
+  + connType : Int
+ }
+
+}
+
+@enduml

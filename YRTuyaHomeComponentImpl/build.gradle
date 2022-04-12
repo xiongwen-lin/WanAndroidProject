@@ -1,0 +1,90 @@
+import com.apemans.build.ARouterDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.UnitTestDependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    resourcePrefix "tuyahome_"
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation ("com.apemans:YRUIBusiness:+")
+    implementation ("com.apemans:YRResource:+")
+
+    implementation project(path: ':YRTuyaHomeComponentApi')
+
+    //涂鸦模块
+    implementation project(path: ':YRTuyaComponentApi')
+    if (!debugMessageComponent) {
+        runtimeOnly project(path: ':YRTuyaComponentImpl')
+    }
+
+    //消息模块
+    //implementation project(path: ':YRMessageComponentApi')
+    implementation("com.apemans:YRMessageComponentApi:+")
+    implementation("com.apemans:YRMessageComponentImpl:+")
+    if (!debugMessageComponent) {
+        //runtimeOnly project(path: ':YRMessageComponentImpl')
+    }
+
+    //IPC模块
+    implementation project(path: ':YRIpcComponentApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRIpcComponentImpl')
+    }
+
+    //配网模块
+    implementation("com.apemans:YRConfigNetworkComponentApi:+")
+    if (!debugMessageComponent) {
+        runtimeOnly project(path: ':YRConfigNetworkComponentImpl')
+    }
+
+    kapt ARouterDependency.arouter_compiler
+    implementation ("com.apemans:YRRouter:+")
+
+
+    implementation 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    implementation 'com.scwang.smart:refresh-header-classics:2.0.3'
+
+    testImplementation UnitTestDependency.junit
+    androidTestImplementation UnitTestDependency.androidxJunit
+    androidTestImplementation UnitTestDependency.espresso
+
+}

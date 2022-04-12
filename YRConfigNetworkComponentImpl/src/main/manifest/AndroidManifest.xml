@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apemans.dmcomponent">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application>
+        <activity
+            android:name="com.apemans.dmcomponent.ui.pairdevice.huntingcamera.scanbluetooth.ScanBluetoothActivity"
+            android:exported="false" />
+        <activity android:name="com.apemans.dmcomponent.ui.adddevice.AddDeviceActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.adddevice.AddDeviceActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connectpower.ConnectPowerActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.common.InputTextActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connectwifi.ConnectWifiActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.waitflashing.WaitFlashingActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.savename.SaveNameActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connecting.ConnectingActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.huntingcamera.openpower.OpenPowerActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.scanqrcode.ScanQrCodeActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.scanedqrcode.ScanedQrCodeActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connectcables.ConnectCablesActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connecthotspot.ConnectHotspotActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.dvmode.waitflashing.DvWaitFlashingActivity" />
+        <activity android:name="com.apemans.dmcomponent.ui.pairdevice.connectinghotspot.ConnectingHotspotActivity" />
+        <activity android:name=".ui.pairmethod.phoneqrcodepair.PhoneQrCodePairActivity" />
+        <activity android:name=".ui.pairmethod.PairMethodActivity" />
+        <activity android:name=".ui.pairmethod.deviceqrcodepair.DeviceQrCodePairActivity" />
+        <activity android:name=".ui.pairmethod.bluetoothpair.BluetoothPairActivity" />
+        <activity android:name=".ui.pairmethod.hotspotpair.HotspotPairActivity" />
+    </application>
+
+</manifest>

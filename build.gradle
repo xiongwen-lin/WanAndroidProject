@@ -1,0 +1,67 @@
+import com.apemans.build.PluginManagerDependency
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        // 控制组件的是否单独调试
+        debugDeviceComponent = false
+        debugUserComponent = false
+        debugMessageComponent = false
+        debugMineComponent = false
+        debugRouterComponent = false
+        debugIpcControlComponent = false
+        debugCustomService = false
+        debugYRIpcManagerModuleComponent = false
+        debugTuyaComponent = false
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+        classpath PluginManagerDependency.GoogleServicesGradle
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url "https://maven-other.tuya.com/repository/maven-releases/" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+
+        //Apeman API Repo
+        maven {
+            allowInsecureProtocol = true
+            url 'http://172.16.26.46:8081/repository/Apeman/'
+        }
+        //Osiao Maven Repo
+        maven {
+            allowInsecureProtocol = true
+            url 'http://172.16.26.46:8081/repository/Osiao/'
+        }
+        //Osiao Maven Repo
+        maven {
+            allowInsecureProtocol = true
+            url 'http://172.16.26.46:8081/repository/osaio/'
+        }
+        flatDir { dirs 'libs', '../YRIpcComponentImpl/libs' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

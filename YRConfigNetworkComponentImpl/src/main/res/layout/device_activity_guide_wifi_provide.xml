@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /** * Copyright (c) 2021 海龙 Inc. All rights reserved. */
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/theme_widget_style">
+
+    <com.apemans.quickui.SuperToolbar
+        android:id="@+id/superToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/theme_toolbar_height"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:superToolbar_bottomLineColor="@color/theme_line_color"
+        app:superToolbar_navIcon="@drawable/ic_back"
+        app:superToolbar_showBottomLine="true"
+        app:superToolbar_title="@string/about"
+        app:superToolbar_titleSize="?theme_text_size"
+        app:superToolbar_titleTextColor="?theme_text_color" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

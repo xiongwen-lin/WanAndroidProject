@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.apemans.usercomponent">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" /> <!-- Dangerous Permissions -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Dangerous Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ApemanComponents"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".user.ui.UserSignInActivity"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.AboutActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.AccountInfoActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.feedback.FeedbackActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.MainActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.MineBaseActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.PhotoActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.AppSettingsActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserCountryListActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserForgotPsdActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserInputVerifyCodeActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserSetPasswordActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserTwoAuthLoginActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.CustomNameActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.MineSetNameActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.MineHelpActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.mine.activity.MineFAQActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserSignUpActivity"
+            android:launchMode="singleTask" />
+
+        <activity
+            android:name="com.apemans.usercomponent.user.ui.UserGetVerifyCodeHelpActivity"
+            android:launchMode="singleTask" />
+
+        <activity android:name="com.apemans.usercomponent.user.ui.UserGuideActivity"
+            android:launchMode="singleTask"/>
+
+        <activity android:name="com.apemans.usercomponent.mine.activity.MineBindPhoneActivity"
+            android:launchMode="singleTask"/>
+
+        <meta-data
+            android:name="TUYA_SMART_APPKEY"
+            android:value="tg3euv7jpkc3y9sd4pmu" />
+        <meta-data
+            android:name="TUYA_SMART_SECRET"
+            android:value="qv3ykxmnsfgcxs7dn33xdhrktwfeqayy" />
+
+    </application>
+
+</manifest>

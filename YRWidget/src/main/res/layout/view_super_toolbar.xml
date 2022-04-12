@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/supertoolbar_default_height"
+    tools:maxHeight="55dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imgReturn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="12dp"
+            android:background="?actionBarItemBackground"
+            android:padding="8dp"
+            tools:src="@android:drawable/ic_delete" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            tools:text="Title"
+            tools:textColor="@android:color/black"
+            tools:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imgRight"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="12dp"
+            android:background="?actionBarItemBackground"
+            android:padding="10dp"
+            tools:src="@android:drawable/ic_input_add" />
+
+    </FrameLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="#20373F54"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apemans.custom">
+
+    <application>
+        <activity
+            android:name="com.apemans.custom.CustomServiceActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name="com.apemans.custom.CustomFaqHomeActivity"
+            android:launchMode="singleTask">
+        </activity>
+
+
+
+        <activity
+            android:name="com.apeman.customerservice.view.album.AlbumActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name="com.apemans.custom.review.ReviewActivity"
+            android:launchMode="singleTask">
+        </activity>
+    <activity
+        android:name="com.apemans.custom.FeedbackActivity"
+        android:launchMode="singleTask">
+    </activity>
+        <activity
+            android:name="com.apemans.custom.CustomNameActivity"
+            android:launchMode="singleTask">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apemans.tuya.component">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <application>
+<!--        <activity-->
+<!--            android:name="ui.homemanage.HomeManageActivity"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name=".ui.creategroup.CreateGroupActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.savegroup.SaveGroupActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.homelist.HomeListActivity"
+            android:exported="true" />
+        <activity android:name=".ui.addowner.AddOwnerActivity" />
+        <activity android:name=".ui.addhome.AddHomeActivity" />
+        <activity android:name=".ui.addguests.AddGuestActivity" />
+        <activity android:name=".ui.homesetting.HomeSettingActivity" />
+        <activity android:name=".ui.familymember.FamilyMemberActivity" />
+        <activity android:name=".ui.memberaccess.MemberAccessActivity" />
+        <activity android:name=".ui.inputtext.InputTextActivity"/>
+        <activity android:name=".ui.devicedetails.DeviceDetailsActivity" />
+        <activity android:name=".ui.deviceinfo.DeviceInfoActivity" />
+        <activity android:name=".ui.devicesharelist.DeviceShareListActivity" />
+        <activity android:name=".ui.addshareuser.AddShareUserActivity" />
+        <activity android:name=".ui.group.GroupActivity" />
+        <activity android:name=".ui.groupsetting.GroupSettingActivity" />
+        <activity android:name=".ui.schedulelist.ScheduleListActivity" />
+        <activity android:name=".ui.scheduleaction.ScheduleActionActivity" />
+        <activity android:name=".ui.groupmanager.GroupManagerActivity" />
+        <activity android:name=".ui.homemanage.HomeManageActivity" />
+        <activity android:name=".ui.adddevice.AddDeviceActivity" />
+        <activity android:name=".ui.inputwifi.InputWifiActivity" />
+        <activity android:name=".ui.scandevice.ScanDeviceActivity" />
+        <activity android:name=".ui.resetdevice.ResetDeviceActivity" />
+    </application>
+</manifest>

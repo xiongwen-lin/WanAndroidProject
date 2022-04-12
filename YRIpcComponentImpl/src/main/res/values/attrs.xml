@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ApemansNormalBtn">
+        <item name="android:background">@drawable/apemans_normal_btn_bg</item>
+        <item name="android:layout_height">@dimen/dp_44</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+    </style>
+
+    <!--回放时间刻度尺-->
+    <declare-styleable name="RulerView">
+        <attr name="direction" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+        </attr>
+        <attr name="endValue" format="integer" />
+        <attr name="defaultValue" format="integer" />
+    </declare-styleable>
+</resources>

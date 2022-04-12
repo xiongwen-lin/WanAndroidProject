@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /** * Copyright (c) 2021 海龙 Inc. All rights reserved. */
+  -->
+
+<resources>
+    <!--主题颜色-->
+    <color name="theme_color">#FF4D8CEC</color>
+    <!--主题文本颜色-->
+    <color name="theme_text_color">#FF414245</color>
+    <!--主题副文颜色-->
+    <color name="theme_sub_text_color">#80414245</color>
+    <!--主题背景色-->
+    <color name="theme_background_color">#FFFFFFFF</color>
+    <!--主题次级背景色-->
+    <color name="theme_secondary_background_color">#FFF8F8F8</color>
+    <!--主题不可点击颜色-->
+    <color name="theme_disable_color">#4D414245</color>
+    <!--主题点击反馈颜色-->
+    <color name="theme_pressing_on_color">#0D414245</color>
+    <!--主题分割线颜色-->
+    <color name="theme_line_color">#FFFAFAFA</color>
+    <!--主题安全颜色-->
+    <color name="theme_security_color">#FF44C669</color>
+    <!--主题警示颜色-->
+    <color name="theme_warning_color">#FFFF6B59</color>
+    <!--主题阴影色-->
+    <color name="theme_shadow_color">#FFE9EDF3</color>
+    <!--主题阴影色-->
+    <color name="theme_mask_layer_color">#B2000000</color>
+    <!--主题系统颜色-->
+    <color name="theme_primary_color">#FFECECEC</color>
+    <color name="theme_primary_dark_color">#FFECECEC</color>
+    <color name="theme_accent_color">#FFECECEC</color>
+
+    <!-- 以下不属于主题定义颜色，请勿使用 -->
+    <!--主题标题栏Text颜色-->
+    <color name="theme_title_text_color">@color/theme_text_color</color>
+    <!--button 颜色-->
+    <color name="theme_button_solid_color">@color/theme_color</color>
+    <!--button Text颜色-->
+    <color name="theme_button_text_color">@color/white</color>
+    <!--button阴影色-->
+    <color name="theme_button_shadow_color">@color/blue_100</color>
+
+</resources>

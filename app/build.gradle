@@ -1,0 +1,158 @@
+import com.apemans.build.*
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply plugin: PluginManagerDependency.GoogleServicesPlugin
+
+def keystorePropertiesFile = rootProject.file("app/keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    compileSdk BuildConfig.compileSdkVersion
+
+    packagingOptions {
+        pickFirst 'lib/*/libc++_shared.so'
+        pickFirst 'lib/*/libgnustl_shared.so'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        applicationId "com.afar.osaio"
+        minSdk BuildConfig.minSdkVersion
+        targetSdk BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+
+    }
+
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'lib/*/libc++_shared.so' // 多个 AAR（Android Library）文件中存在此 .so 文件，请选择第一个
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation AndroidXDependency.MultiDex
+    implementation AndroidXDependency.fragment_ktx
+    kapt ARouterDependency.arouter_compiler
+    //implementation 'androidx.core:core-splashscreen:1.0.0-alpha01'
+
+    //Core
+    implementation ("com.apemans:YRUIBusiness:+")
+    //涂鸦模块
+    if (!debugTuyaComponent) {
+        implementation project(path: ':YRTuyaComponentApi')
+    }
+    runtimeOnly project(path: ':YRTuyaComponentImpl')
+
+    //DeviceManager设备管理模块
+    implementation("com.apemans:YRConfigNetworkComponentApi:+")
+    if (!debugDeviceComponent) {
+        runtimeOnly project(path: ':YRConfigNetworkComponentImpl')
+    }
+
+    //User用户模块
+    implementation ("com.apemans:YRUserComponentApi:+")
+    if (!debugUserComponent) {
+        runtimeOnly project(path: ':YRUserComponentImpl')
+    }
+    //Message消息模块
+    //implementation project(path: ':YRMessageComponentApi')
+    implementation("com.apemans:YRMessageComponentApi:+")
+    implementation("com.apemans:YRMessageComponentImpl:+")
+    implementation ("com.apemans:YRMessagePush:+")
+    if (!debugMessageComponent) {
+        //runtimeOnly project(path: ':YRMessageComponentImpl')
+    }
+//    implementation project(path: ':YRCustomServiceComponentImpl')
+    //路由器模块
+//    implementation project(path: ':YRRouterControlComponentApi')
+//    if (!debugRouterComponent) {
+//        runtimeOnly project(path: ':YRRouterControlComponentImpl')
+//    }
+
+    //IPC模块
+    implementation project(path: ':YRIpcSchemeApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRIpcSelfDevelopSchemeImpl')
+    }
+    implementation project(path: ':YRIpcControlComponentApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRIpcControlComponentImpl')
+    }
+    implementation ("com.apemans:YRIpcSdk:+")
+
+    //模块
+    implementation project(path: ':YRIpcComponentApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRIpcComponentImpl')
+    }
+    //模块
+    implementation project(path: ':YRIpcHomeComponentApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRIpcHomeComponentImpl')
+    }
+    //模块
+    implementation project(path: ':YRTuyaHomeComponentApi')
+    if (!debugIpcControlComponent) {
+        runtimeOnly project(path: ':YRTuyaHomeComponentImpl')
+    }
+
+    runtimeOnly project(path: ':YRTuyaComponentImpl')
+    runtimeOnly project(path: ':YRDataManagerComponentImpl')
+    runtimeOnly project(path: ':YRPlatformComponentImpl')
+    runtimeOnly project(path: ':YRTDPrinterComponentImpl')
+
+    //解决部分手机没有安装Google play框架导致崩溃（如三星A51）
+    implementation "io.grpc:grpc-okhttp:1.32.2"
+
+}

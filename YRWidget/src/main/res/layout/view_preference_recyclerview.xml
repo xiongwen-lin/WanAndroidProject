@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /** * Copyright (c) 2021 海龙 Inc. All rights reserved. */
+  android:overScrollMode="never" 可去除上下滑动的阴影
+  -->
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recyclerview"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:overScrollMode="never"
+    tools:itemCount="5"
+    tools:listitem="@layout/view_preference_item"
+    android:layout_height="match_parent" />

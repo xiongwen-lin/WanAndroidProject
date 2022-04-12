@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apemans.tdprintercomponentimpl">
+
+    <application>
+        <activity
+            android:name=".ui.control.TDPrinterWorkstationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.control.TDPrinterFileActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.setting.TDPrinterSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.setting.TDPrinterInfoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.setting.TDPrinterSharingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.setting.NameDeviceActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

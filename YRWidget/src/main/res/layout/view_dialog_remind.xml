@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:id="@+id/root_remind"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <com.animsh.animatedcheckbox.AnimatedCheckBox
+        android:id="@+id/checkbox_remind"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:border_stroke_width="2dp"
+        app:color_checked="#4D8CEC"
+        app:color_tick="@android:color/white"
+        app:color_unchecked="@android:color/white"
+        app:color_unchecked_stroke="#4D414245"
+        app:small_tick="true"
+        app:tick_stroke_width="1dp" />
+
+    <TextView
+        android:id="@+id/txt_remind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"
+        android:text="Don't remind me again"
+        android:textColor="#414245"
+        android:textSize="12sp" />
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SmartEditBox">
+
+        <!--  Title标题  -->
+        <attr format="string" name="title"/>
+        <attr format="dimension|reference" name="titleSize"/>
+        <attr format="color|reference" name="titleColor"/>
+
+        <!--  输入内容  -->
+        <attr format="string" name="hint"/>
+        <attr format="string" name="text"/>
+        <attr format="dimension|reference" name="textsize"/>
+        <attr format="color|reference" name="textcolor"/>
+        <attr format="color|reference" name="hintcolor"/>
+        <attr name="android:gravity"/>
+
+        <!--  输入游标  -->
+        <attr format="reference" name="cursor_drawable"/>
+
+        <!--  状态背景  -->
+        <attr format="reference" name="focus_edit_background"/>
+        <attr format="reference" name="normal_edit_background"/>
+        <attr format="reference" name="error_edit_background"/>
+
+        <!--  主题图标  -->
+        <attr format="reference" name="theme_icon"/>
+        <attr format="reference" name="clear_icon"/>
+        <attr format="reference" name="eye_on_icon"/>
+        <attr format="reference" name="eye_off_icon"/>
+        <attr format="reference" name="arrow_icon"/>
+
+        <attr name="android:inputType"/>
+        <attr name="android:maxLines"/>
+        <!--  lines 设置行数的同时可设置其输入框的高度是多少行的高度  -->
+        <attr name="android:lines"/>
+        <attr name="android:singleLine"/>
+        <!--右侧展示文字-->
+        <attr name="right_text" format="string"/>
+        <attr format="color|reference" name="right_text_color"/>
+
+        <!--  右侧按钮显示位置-单行时默认center  -->
+        <attr format="enum" name="button_gravity">
+            <enum name="center" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+        </attr>
+
+    </declare-styleable>
+</resources>

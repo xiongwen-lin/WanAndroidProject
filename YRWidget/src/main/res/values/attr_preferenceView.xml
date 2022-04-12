@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PreferenceView">
+        <attr name="preferenceView_itemIcon" format="reference" />
+        <attr name="preferenceView_title" format="string" />
+        <attr name="preferenceView_titleTextColor" format="color" />
+        <attr name="preferenceView_titleSize" format="dimension" />
+        <attr name="preferenceView_subTitle" format="string" />
+        <attr name="preferenceView_subTitleTextColor" format="color" />
+        <attr name="preferenceView_subTitleSize" format="dimension" />
+        <attr name="preferenceView_rightValueTitle" format="string" />
+        <attr name="preferenceView_rightValueSize" format="dimension" />
+        <attr name="preferenceView_rightValueTextColor" format="color" />
+        <attr name="preferenceView_switchThumb" format="reference" />
+        <attr name="preferenceView_switchTruck" format="reference" />
+        <attr name="preferenceView_showSwitch" format="boolean" />
+        <attr name="preferenceView_arrowRightIcon" format="reference" />
+        <attr name="preferenceView_showArrowRight" format="boolean" />
+        <attr name="preferenceView_showBottomLine" format="boolean" />
+        <attr name="preferenceView_selected" format="reference" />
+        <attr name="preferenceView_bottomLineColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PreferenceCategory">
+        <attr name="preferenceCategory_title" format="string" />
+        <attr name="preferenceCategory_titleTextColor" format="color" />
+        <attr name="preferenceCategory_titleSize" format="dimension" />
+        <attr name="preferenceCategory_backGroundColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PreferenceBar">
+        <attr name="preferenceBar_rightIcon" format="reference" />
+        <attr name="preferenceBar_title" format="string" />
+        <attr name="preferenceBar_titleTextColor" format="color" />
+        <attr name="preferenceBar_titleSize" format="dimension" />
+        <attr name="preferenceBar_backgroundColor" format="color" />
+        <attr name="preferenceBar_progressDrawable" format="reference" />
+        <attr name="preferenceBar_thumbDrawable" format="reference" />
+        <attr name="preferenceBar_degreeText" format="string" />
+        <attr name="preferenceBar_degreeTextColor" format="color" />
+        <attr name="preferenceBar_degreeSize" format="dimension" />
+        <attr name="preferenceBar_unit" format="string" />
+        <attr name="preferenceBar_min" format="integer" />
+        <attr name="preferenceBar_max" format="integer" />
+        <attr name="preferenceBar_progress" format="integer" />
+        <attr name="preferenceBar_unitColor" format="color" />
+        <attr name="preferenceBar_unitSize" format="dimension" />
+        <attr name="preferenceBar_showBottomLine" format="boolean" />
+        <attr name="preferenceBar_bottomLineColor" format="color" />
+    </declare-styleable>
+
+</resources>

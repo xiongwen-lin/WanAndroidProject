@@ -1,0 +1,87 @@
+[submodule "buildSrc"]
+	path = buildSrc
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/buildSrc.git
+[submodule "YRBase"]
+	path = YRBase
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRBase.git
+[submodule "YRBluetooth"]
+	path = YRBluetooth
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRBluetooth.git
+[submodule "YRCustomServiceComponentApi"]
+	path = YRCustomServiceComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRCustomServiceComponentApi.git
+[submodule "YRCustomServiceComponentImpl"]
+	path = YRCustomServiceComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRCustomServiceComponentImpl.git
+[submodule "YRIpcComponentApi"]
+	path = YRIpcComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcComponentApi.git
+[submodule "YRIpcComponentImpl"]
+	path = YRIpcComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcComponentImpl.git
+[submodule "YRIpcControlComponentApi"]
+	path = YRIpcControlComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcControlComponentApi.git
+[submodule "YRIpcControlComponentImpl"]
+	path = YRIpcControlComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcControlComponentImpl.git
+[submodule "YRIpcHomeComponentApi"]
+	path = YRIpcHomeComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcHomeComponentApi.git
+[submodule "YRIpcHomeComponentImpl"]
+	path = YRIpcHomeComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcHomeComponentImpl.git
+[submodule "YRIpcSchemeApi"]
+	path = YRIpcSchemeApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcSchemeApi.git
+[submodule "YRIpcSelfDevelopSchemeImpl"]
+	path = YRIpcSelfDevelopSchemeImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRIpcSelfDevelopSchemeImpl.git
+[submodule "YRLogger"]
+	path = YRLogger
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRLogger.git
+[submodule "YRResource"]
+	path = YRResource
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRResource.git
+[submodule "YRRouter"]
+	path = YRRouter
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRRouter.git
+[submodule "YRTuyaComponentApi"]
+	path = YRTuyaComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRTuyaComponentApi.git
+[submodule "YRTuyaComponentImpl"]
+	path = YRTuyaComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRTuyaComponentImpl.git
+[submodule "YRTuyaHomeComponentApi"]
+	path = YRTuyaHomeComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRTuyaHomeComponentApi.git
+[submodule "YRTuyaHomeComponentImpl"]
+	path = YRTuyaHomeComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRTuyaHomeComponentImpl.git
+[submodule "YRUserComponentApi"]
+	path = YRUserComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRUserComponentApi.git
+[submodule "YRUserComponentImpl"]
+	path = YRUserComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRUserComponentImpl.git
+[submodule "YRWidget"]
+	path = YRWidget
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRWidget.git
+[submodule "YRDataManagerComponentImpl"]
+	path = YRDataManagerComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRDataManagerComponentImpl.git
+[submodule "YRConfigNetworkComponentApi"]
+	path = YRConfigNetworkComponentApi
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRConfigNetworkComponentApi.git
+[submodule "YRConfigNetworkComponentImpl"]
+	path = YRConfigNetworkComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRConfigNetworkComponentImpl.git
+[submodule "YRUIBusiness"]
+	path = YRUIBusiness
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRCXSDK/YRUIBusiness.git
+[submodule "YRPlatformComponentImpl"]
+	path = YRPlatformComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRPlatformComponentImpl.git
+[submodule "YRTDPrinterComponentImpl"]
+	path = YRTDPrinterComponentImpl
+	url = https://gitlab.apeman.com.cn/sz/app/android/pro/YRCXCategory/YRTDPrinterComponentImpl.git

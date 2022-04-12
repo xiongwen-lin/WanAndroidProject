@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/device_textview21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Choose the device you want to connect"
+        android:textColor="#414245"
+        android:textSize="@dimen/sp_22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/device_imageview10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_scan_radar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_scan_radar"
+        app:srcCompat="@drawable/device_group_bluetooth_enable" />
+
+    <ImageView
+        android:id="@+id/iv_scan_radar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/device_textview21"
+        app:srcCompat="@drawable/device_scan_radar" />
+
+    <TextView
+        android:id="@+id/device_textview22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Scanning for camera Bluetooth..."
+        android:textColor="#414245"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_scan_radar" />
+
+    <TextView
+        android:id="@+id/btn_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:text="More device"
+        android:textColor="#4D8CEC"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/device_textview22"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_device1"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/device_imageview10"
+        app:layout_constraintEnd_toEndOf="@+id/device_imageview10"
+        app:srcCompat="@drawable/device_video_camera"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_device1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="DeviceName"
+        android:textColor="#414245"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_device1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_device1"
+        app:layout_constraintTop_toBottomOf="@+id/iv_device1"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_device2"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="160dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/device_imageview10"
+        app:layout_constraintEnd_toEndOf="@+id/iv_scan_radar"
+        app:srcCompat="@drawable/device_video_camera"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_device2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeviceName"
+        android:textColor="#414245"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_device2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_device2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_device2"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_device3"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/device_imageview10"
+        app:layout_constraintTop_toTopOf="@+id/device_imageview10"
+        app:srcCompat="@drawable/device_video_camera"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_device3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeviceName"
+        android:textColor="#414245"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_device3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_device3"
+        app:layout_constraintTop_toBottomOf="@+id/iv_device3"
+        tools:visibility="visible" />
+
+
+    <ImageView
+        android:id="@+id/iv_device4"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="56dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/device_imageview10"
+        app:layout_constraintStart_toStartOf="@+id/iv_scan_radar"
+        app:srcCompat="@drawable/device_video_camera"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_device4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeviceName"
+        android:textColor="#414245"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_device4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iv_device4"
+        app:layout_constraintTop_toBottomOf="@+id/iv_device4"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

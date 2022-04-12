@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaecef"
+    tools:context=".CustomServiceActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMsgList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/dp_7"
+        app:layout_constraintBottom_toTopOf="@+id/cl_chat_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/cl_chat_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/cl_func_kit">
+
+        <LinearLayout
+            android:id="@+id/ll_add"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/bt_add"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_nav_add_off" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_chat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:maxHeight="132dp"
+            android:minHeight="44dp"
+            android:padding="8dp"
+            android:hint="@string/help_faq_hint"
+            android:textSize="13sp"
+            android:textCursorDrawable="@drawable/et_cursor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ll_send"
+            app:layout_constraintStart_toEndOf="@+id/ll_add"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_send"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_margin="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/bt_send"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+
+                android:src="@drawable/ic_send_unable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_func_kit"
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:background="#F8F8F8"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_func_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/bg_btn_on_normal_white"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_func_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_feedback_photo" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_func_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/media_label_photo"
+            app:layout_constraintEnd_toEndOf="@+id/ll_func_img"
+            app:layout_constraintStart_toStartOf="@+id/ll_func_img"
+            app:layout_constraintTop_toBottomOf="@+id/ll_func_img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--未登录按钮-->
+    <LinearLayout
+        android:id="@+id/activity_chat_room_ll_no_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/cl_func_kit">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:alpha="0.5"
+            android:gravity="center"
+            android:text="@string/help_faq_no_login"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/activity_chat_room_btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/theme_color"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

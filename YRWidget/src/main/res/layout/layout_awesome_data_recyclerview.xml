@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apemans.quickui.statelayout.StateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewStateLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:empty_layout="@layout/state_layout_empty"
+    app:error_layout="@layout/state_layout_error"
+    app:loading_layout="@layout/state_layout_loading">
+
+    <com.apemans.quickui.recyclerview.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="20"
+            tools:listitem="@layout/rv_awesome_item" />
+
+    </com.apemans.quickui.recyclerview.SmartRefreshLayout>
+
+
+</com.apemans.quickui.statelayout.StateLayout>

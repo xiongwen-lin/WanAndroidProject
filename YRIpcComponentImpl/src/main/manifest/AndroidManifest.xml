@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apemans.smartipcimpl">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Required -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+
+    <application>
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcSettingActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcDeviceInfoActivity" />
+
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcPictureSettingActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcDetectionActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcDetectionScheduleActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcDetectionScheduleEditorActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcDetectionAreaActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcSharingActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcConnectionModeSwitchActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcStorageActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcUpgradeActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcFlashLightActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcShootingActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcShootingRecordDurationActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcShootingImageNumActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcNameDeviceActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.IpcChangePasswordActivity" />
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.setting.GatewayDeviceInfoActivity" />
+
+
+        <activity android:name="com.apemans.smartipcimpl.ui.ipcdevices.player.IpcPlayerActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensor"
+            />
+    </application>
+
+</manifest>

@@ -1,0 +1,175 @@
+[
+  {
+    "name" : "Router",
+    "type" : 0,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "R2",
+        "type" : "R2",
+        "productType" : 0,
+        "enable" : true
+      }
+    ]
+  },{
+    "name" : "Card",
+    "type" : 1,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "PC420",
+        "type" : "PC420",
+        "productType" : 1,
+        "enable" : true
+      },
+      {
+        "name" : "PC440",
+        "type" : "PC440",
+        "productType" : 1,
+        "enable" : true
+      },
+      {
+        "name" : "TC100",
+        "type" : "TC100",
+        "productType" : 1,
+        "enable" : true
+      }
+    ]
+  },
+  {
+    "name" : "Head",
+    "type" : 3,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "PC530",
+        "type" : "PC530",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "PC530 Pro",
+        "type" : "PC530PRO",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "PC540",
+        "type" : "PC540",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "PC660",
+        "type" : "PC660",
+        "productType" : 3,
+        "enable" : false
+      },
+      {
+        "name" : "PC660 Pro",
+        "type" : "PC660PRO",
+        "productType" : 3,
+        "enable" : false
+      },
+      {
+        "name" : "SC100",
+        "type" : "SC100",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "SC210",
+        "type" : "SC210",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "SC220",
+        "type" : "SC220",
+        "productType" : 3,
+        "enable" : false
+      },
+      {
+        "name" : "TR100",
+        "type" : "TR100",
+        "productType" : 3,
+        "enable" : true
+      },
+      {
+        "name" : "TS200",
+        "type" : "TS200",
+        "productType" : 3,
+        "enable" : true
+      }
+    ]
+  },
+  {
+    "name" : "Indoor Camera MINI",
+    "type" : 5,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "MC120",
+        "type" : "MC120",
+        "productType" : 5,
+        "enable" : true
+      }
+    ]
+  },
+  {
+    "name" : "Low power",
+    "type" : 4,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "EC810-CAM",
+        "type" : "EC810-CAM",
+        "productType" : 4,
+        "enable" : false
+      },
+      {
+        "name" : "EC810PRO",
+        "type" : "EC810PRO",
+        "productType" : 4,
+        "enable" : true
+      },
+      {
+        "name" : "EC810-PLUS",
+        "type" : "EC810-PLUS",
+        "productType" : 4,
+        "enable" : false
+      },
+      {
+        "name" : "HC320",
+        "type" : "HC320",
+        "productType" : 4,
+        "enable" : false
+      }
+    ]
+  },
+  {
+    "name" : "Gun",
+    "type" : 2,
+    "enable" : true,
+    "children" : [
+      {
+        "name" : "PC730",
+        "type" : "PC730",
+        "productType" : 2,
+        "enable" : true
+      },
+      {
+        "name" : "PC770",
+        "type" : "PC770",
+        "productType" : 2,
+        "enable" : true
+      },
+      {
+        "name" : "TS100",
+        "type" : "TS100",
+        "productType" : 2,
+        "enable" : true
+      }
+    ]
+  }
+]

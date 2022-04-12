@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package com.smart.ipccontrolapi {
+
+ interface IpcControlApiService {
+
+  + createIpcSchemeCore(type : Int) : IIpcSchemeCore
+ }
+}
+
+@enduml

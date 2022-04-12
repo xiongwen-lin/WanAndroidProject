@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apemans.quickui.preference.PreferenceView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewPreference"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="0dp"
+    android:layout_marginEnd="0dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="15dp"
+    app:preferenceView_arrowRightIcon="@drawable/tools_right_arrow_gray"
+    app:preferenceView_bottomLineColor="#33ffffff"
+    app:preferenceView_rightValueSize="14sp"
+    app:preferenceView_rightValueTextColor="@android:color/darker_gray"
+    app:preferenceView_rightValueTitle=""
+    app:preferenceView_showBottomLine="true"
+    app:preferenceView_showSwitch="true"
+    app:preferenceView_switchThumb="@drawable/tools_selector_switch_thumb"
+    app:preferenceView_switchTruck="@drawable/tools_selector_switch_truck"
+    app:preferenceView_title="Hello"
+    app:preferenceView_titleSize="16sp"
+    app:preferenceView_titleTextColor="@android:color/black"
+    tools:preferenceView_arrowRightIcon="@drawable/tools_arrow_right"/>
+
+    <!--app:preferenceView_selected="@drawable/tools_confirm_on"-->

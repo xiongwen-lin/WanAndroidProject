@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  定义View id 和资源文件名称时，id名称请按以下名字对应  -->
+    <!--  Error View ###############################################  -->
+    <!--  控件ID-->
+    <item name="viewErrorImage" type="id" />
+    <item name="viewErrorTextDesc" type="id" />
+    <item name="viewErrorBtn" type="id" />
+
+    <!--  Empty View ###############################################  -->
+    <!--  控件ID-->
+    <item name="viewEmptyImage" type="id" />
+    <item name="viewEmptyTextDesc" type="id" />
+    <item name="viewEmptyBtn" type="id" />
+
+</resources>

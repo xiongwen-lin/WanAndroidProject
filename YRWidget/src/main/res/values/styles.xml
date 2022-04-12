@@ -1,0 +1,20 @@
+<resources>
+    <style name="Widget.DefaultToolbarStyle" parent="android:Widget">
+        <item name="titleTextColor">#ffffff</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_no_content_bg</item>
+        <item name="android:textColorHint">#7F414245</item>
+        <item name="android:textColor">#FF414245</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">15sp</item>
+        <!--    自定义光标 https://blog.csdn.net/qq_20451879/article/details/79075272   -->
+        <!-- <item name="android:textCursorDrawable">@drawable/edit_cursor</item>-->
+    </style>
+
+</resources>

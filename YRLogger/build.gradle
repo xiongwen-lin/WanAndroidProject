@@ -1,0 +1,67 @@
+import com.apemans.build.*
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: "$rootDir/buildSrc/Maven-publish-script.gradle"
+apply from: "$rootDir/buildSrc/packagingAAR.gradle"
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        ndk {
+            abiFilter "armeabi-v7a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    //配置打包
+    packagingAAR(project, android)
+
+    //配置打包脚本信息
+    //configMavenPublish(project, android, "http://172.16.26.46:8081/repository/yourmavenname","your group id")
+    configMavenPublish(
+            project,
+            android,
+            "http://172.16.26.46:8081/repository/osaio",
+            "com.apemans")
+
+}
+
+dependencies {
+    implementation KotlinDependency.kotlin_stdlib
+    implementation KotlinDependency.CoroutinesCore
+    implementation KotlinDependency.CoroutinesAndroid
+    implementation AndroidXDependency.core_ktx
+    implementation AndroidXDependency.appcompat
+    testImplementation UnitTestDependency.junit
+    androidTestImplementation UnitTestDependency.androidxJunit
+    androidTestImplementation UnitTestDependency.espresso
+
+    api 'com.dianping.android.sdk:logan:1.2.4'
+    implementation("com.tencent.mars:mars-xlog:+")
+}
+

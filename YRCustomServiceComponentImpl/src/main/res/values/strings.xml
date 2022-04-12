@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Custom</string>
+
+
+    <string name="help_faq_main">Help&amp;Feedback</string>
+    <string name="help_faq_tip_one">Tips: Quickly contact us via </string>
+    <string name="help_faq_tip_two"> or email.</string>
+    <string name="help_faq_no_login">After logging in, we can quickly contact you and help you solve the problem</string>
+    <string name="help_faq_hint"> Please input  your problem </string>
+    <string name="help_faq_file_max">No more than three files</string>
+    <string name="help_faq_album_title">Select up  files </string>
+    <string name="help_faq_email_us">No Email App can send email</string>
+    <string name="help_faq_send_empty">请输入内容</string>
+    <string name="help_faq_send_Feedbacked_more_msg">请勿连续发起太多反馈，3分钟后再发</string>
+    <string name="help_faq_send_net_error">请检查网络</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tcp_preview_live">Live</string>
+    <string name="tcp_preview_bottom_tips">Get secure cloud storage to see motion / sound clips easily.</string>
+    <string name="tcp_preview_location_name">Location name</string>
+    <string name="tcp_preview_location">Location </string>
+    <string name="tcp_preview_dicrection">Preset direction </string>
+    <string name="tcp_preview_dicrection_add_bearing">Add Bearing </string>
+    <string name="tcp_preview_dicrection_add">Set the current screen as a shortcut</string>
+    <string name="tcp_preview_dicrection_edit_error">Please input correct</string>
+
+    <string name="tcp_preview_online_error">Please check your device is online !</string>
+    <string name="tcp_preview_device_upgrade">Camera is upgrading.  \n Please DO NOT power off ,reset or remove it.</string>
+
+    <string name="tcp_preview_storge_empty">No data is stored on that day</string>
+    <string name="tcp_preview_could_storage_empty">Please check whether your Cloud Storage is normal </string>
+    <string name="tcp_preview_sdcard_storage_error">Please check whether your SD card is damaged</string>
+</resources>

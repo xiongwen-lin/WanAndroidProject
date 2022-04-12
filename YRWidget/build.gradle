@@ -1,0 +1,87 @@
+import com.apemans.build.*
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: "$rootDir/buildSrc/Maven-publish-script.gradle"
+apply from: "$rootDir/buildSrc/packagingAAR.gradle"
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    //配置打包
+    packagingAAR(project, android)
+
+    //配置打包脚本信息
+    //configMavenPublish(project, android, "http://172.16.26.46:8081/repository/yourmavenname","your group id")
+    configMavenPublish(
+            project,
+            android,
+            "http://172.16.26.46:8081/repository/osaio",
+            "com.apemans")
+}
+
+dependencies {
+    api AndroidXDependency.core_ktx
+    api AndroidXDependency.appcompat
+    api AndroidXDependency.material
+    api ThridpartDependencyKt.MultiType
+
+    implementation("com.apemans:YRResource:+")
+
+    //扩展函数
+    api ThridpartDependencyKt.DylanCaiCoding_Longan
+
+    //lottie 动画
+    api ThridpartDependencyKt.lottie
+
+    //Shape 框架：https://github.com/getActivity/ShapeView
+    api ThridpartDependencyKt.ShapeView
+
+    //CheckBox
+    implementation 'com.github.animsh:AnimatedCheckBox:1.0.0'
+
+    api KotlinDependency.CoroutinesCore
+    api KotlinDependency.CoroutinesAndroid
+
+    //lottie 动画
+    implementation ThridpartDependencyKt.lottie
+
+    //CheckBox
+    implementation 'com.github.animsh:AnimatedCheckBox:1.0.0'
+    implementation ThridpartDependencyKt.Tapadoo
+
+    //GenjiDialogV2
+    //api 'com.github.q876625596:GenjiDialogV2:1.4.1'
+    //api project(':genjidialog')
+    //Local Maven 修改后的版本代码
+    //api 'com.ly:genjidialog:1.4.4'
+    api("com.apemans:GenjiDialog:+")
+
+    api ThridpartDependencyKt.Glide
+    api ThridpartDependencyKt.GlideCompiler
+}

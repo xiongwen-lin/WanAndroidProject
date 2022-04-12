@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apemans.quickui.preference.PreferenceBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pb_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:preferenceBar_bottomLineColor="#33ffffff"
+    app:preferenceBar_progressDrawable="@drawable/tools_seekbar_style"
+    app:preferenceBar_showBottomLine="true"
+    app:preferenceBar_thumbDrawable="@drawable/tools_seekbar_thumb_style"
+    app:preferenceBar_title="Brightness"
+    app:preferenceBar_titleTextColor="@android:color/black"
+    app:preferenceBar_unit="%"
+    app:preferenceBar_unitSize="15sp" />

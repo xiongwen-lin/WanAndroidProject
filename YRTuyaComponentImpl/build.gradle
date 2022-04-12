@@ -1,0 +1,55 @@
+import com.apemans.build.ARouterDependency
+import com.apemans.build.AndroidXDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.KotlinDependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+    resourcePrefix "tuya_"
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation ("com.apemans:YRUIBusiness:+")
+    implementation 'com.contrarywind:wheelview:4.1.0'
+
+    kapt ARouterDependency.arouter_compiler
+    implementation ("com.apemans:YRRouter:+")
+    api project(path: ':YRTuyaComponentApi')
+
+}

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.TDPrinterSharingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tdPrinterSharingTipTitle"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:text=""
+            android:textColor="@color/theme_text_color"
+            android:textSize="@dimen/theme_primary_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.apemans.quickui.editbox.SmartEditBox
+            android:id="@+id/tdPrinterSharer"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:singleLine="true"
+            app:hint="E-Mail"
+            app:hintcolor="@color/theme_sub_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tdPrinterSharingTipTitle"
+            app:text=""
+            app:textcolor="@color/theme_text_color" />
+
+        <Button
+            android:id="@+id/tdPrinterSharingSend"
+            style="@style/theme_apemans_normal_btn_style"
+            android:layout_width="@dimen/dp_0"
+            android:layout_marginStart="@dimen/dp_42"
+            android:layout_marginTop="@dimen/dp_72"
+            android:layout_marginEnd="@dimen/dp_42"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:text="@string/camera_share_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tdPrinterSharer" />
+
+        <TextView
+            android:id="@+id/tdPrinterShareListTitle"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:text=""
+            android:textColor="@color/theme_text_color"
+            android:textSize="@dimen/theme_level_3_title_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tdPrinterSharingSend" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tdPrinterSharerRv"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tdPrinterShareListTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

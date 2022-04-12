@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ipcdevices.setting.IpcSettingActivity">
+
+    <ScrollView
+        android:id="@+id/svIpcSetting"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/btnIpcSettingRemoveDevice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deviceIpcSettingInfoCard"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_5"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/deviceIpcSettingInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/deviceIpcSettingInfoIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_20"
+                            android:layout_marginTop="@dimen/dp_25"
+                            android:layout_marginBottom="@dimen/dp_25"
+                            android:src="@drawable/device_gateway_camera"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/deviceIpcSettingInfoName"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_15"
+                            android:layout_marginTop="@dimen/dp_25"
+                            android:layout_marginBottom="@dimen/dp_3"
+                            android:text="camera"
+                            android:textColor="@color/theme_text_color"
+                            android:textSize="@dimen/sp_16"
+                            app:layout_constraintBottom_toTopOf="@id/deviceIpcSettingInfoModel"
+                            app:layout_constraintEnd_toStartOf="@id/deviceIpcSettingUpgradeState"
+                            app:layout_constraintHorizontal_weight="3"
+                            app:layout_constraintStart_toEndOf="@id/deviceIpcSettingInfoIcon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <TextView
+                            android:id="@+id/deviceIpcSettingInfoModel"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_3"
+                            android:layout_marginBottom="@dimen/dp_25"
+                            android:text="camera"
+                            android:textColor="@color/theme_sub_text_color"
+                            android:textSize="@dimen/sp_12"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/deviceIpcSettingInfoName"
+                            app:layout_constraintStart_toStartOf="@id/deviceIpcSettingInfoName"
+                            app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingInfoName" />
+
+                        <TextView
+                            android:id="@+id/deviceIpcSettingUpgradeState"
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_5"
+                            android:text="camera"
+                            android:textColor="@color/theme_text_color"
+                            android:textSize="@dimen/sp_16"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/deviceIpcSettingInfoArrow"
+                            app:layout_constraintHorizontal_weight="2"
+                            app:layout_constraintStart_toEndOf="@id/deviceIpcSettingInfoName"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/deviceIpcSettingInfoArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_20"
+                            android:src="@drawable/right_arrow_black"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:background="@color/theme_line_color" />
+
+                    <com.apemans.quickui.label.LabelTextSwitchBtnView
+                        android:id="@+id/deviceIpcSettingInfoSwitch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_2" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/deviceIpcSettingNoticeCard"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingInfoCard">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    app:cardCornerRadius="@dimen/dp_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.apemans.quickui.label.LabelTextIconView
+                            android:id="@+id/deviceIpcSettingNoticeSharing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_2"
+                            android:layout_marginEnd="@dimen/dp_10" />
+
+                        <com.apemans.quickui.label.LabelTextDetailSwitchBtnView
+                            android:id="@+id/deviceIpcSettingNoticeDetection"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:layout_marginBottom="@dimen/dp_2" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/deviceIpcSettingNoticeTip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_25"
+                    android:text="Osaio APP notification has been turned off"
+                    android:textColor="@color/theme_sub_text_color"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/deviceIpcSettingNoticeCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_25"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_25"
+                    android:text="Check the details"
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/sp_14" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deviceIpcSettingCard"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_5"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:layout_constraintBottom_toTopOf="@id/deviceIpcSettingCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingNoticeCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingPicture"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingMotionDetect"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingPicture" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingSoundDetect"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingMotionDetect" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingHumanDetect"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingSoundDetect" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingShooting"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingHumanDetect" />
+
+                    <com.apemans.quickui.label.LabelTextInfoIconView
+                        android:id="@+id/deviceIpcSettingFlashLight"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingShooting" />
+
+                    <com.apemans.quickui.label.LabelTextSwitchBtnView
+                        android:id="@+id/deviceIpcSettingLed"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingFlashLight" />
+
+                    <com.apemans.quickui.label.LabelTextDetailSelectionView
+                        android:id="@+id/deviceIpcSettingSyncTime"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingLed" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingSwitchConnection"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingSyncTime" />
+
+                    <com.apemans.quickui.label.LabelTextIconView
+                        android:id="@+id/deviceIpcSettingStorage"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingSwitchConnection" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/deviceIpcSettingAlexa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_50"
+                android:layout_marginBottom="@dimen/dp_60"
+                android:drawableTop="@drawable/device_gateway_camera"
+                android:drawablePadding="@dimen/dp_10"
+                android:text="Amazon Alexa"
+                android:textColor="@color/theme_text_color"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deviceIpcSettingGoogle"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deviceIpcSettingCard" />
+
+            <TextView
+                android:id="@+id/deviceIpcSettingGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_50"
+                android:drawableTop="@drawable/device_gateway_camera"
+                android:drawablePadding="@dimen/dp_10"
+                android:text="Amazon Alexa"
+                android:textColor="@color/theme_text_color"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/deviceIpcSettingAlexa"
+                app:layout_constraintTop_toTopOf="@id/deviceIpcSettingAlexa" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnIpcSettingRemoveDevice"
+        style="@style/theme_apemans_normal_btn_style"
+        android:layout_width="@dimen/dp_0"
+        android:layout_marginStart="@dimen/dp_60"
+        android:layout_marginEnd="@dimen/dp_60"
+        android:layout_marginBottom="@dimen/dp_60"
+        android:text="Delete device"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btnIpcSettingResetDevice"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:gravity="center"
+        android:text="factory data reset"
+        android:textColor="@color/theme_sub_text_color"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnIpcSettingRemoveDevice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="NooieAutocompleteTextStyle" parent="Widget.AppCompat.EditText" tools:ignore="ResourceName">
+        <item name="android:background">@drawable/edit_text_no_content_bg</item>
+        <item name="android:textColorHint">@color/theme_sub_text_color</item>
+        <item name="android:textColor">@color/theme_sub_text_color</item>
+        <item name="android:paddingLeft">@dimen/dp_17</item>
+        <item name="android:paddingRight">@dimen/dp_17</item>
+        <item name="android:paddingTop">@dimen/dp_16</item>
+        <item name="android:paddingBottom">@dimen/dp_16</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textCursorDrawable">@drawable/edit_cursor</item>
+    </style>
+
+    <style name="transparent_background_dialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="from_bottom_anim" parent="android:Animation" tools:ignore="ResourceName">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_from_bottom_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_to_bottom_anim</item>
+    </style>
+
+    <!-- Divider line -->
+    <style name="divider_thin" tools:ignore="ResourceName">
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/divider_line_of_white_bg</item>
+    </style>
+
+    <!-- Place Holder -->
+    <style name="stretch_space" tools:ignore="ResourceName">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+</resources>

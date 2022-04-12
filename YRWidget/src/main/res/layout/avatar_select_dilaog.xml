@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_marginBottom="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/cancel"
+        app:layout_constraintLeft_toLeftOf="@+id/cancel"
+        app:layout_constraintRight_toRightOf="@+id/cancel">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/take_photo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/btn_top_left_right_corners_background"
+            android:gravity="center"
+            android:text="Take photo"
+            android:textAllCaps="false"
+            android:textColor="#414245"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#1AE2E2E2" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/select_photo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/btn_bottom_left_right_corners_background"
+            android:gravity="center"
+            android:text="select album"
+            android:textAllCaps="false"
+            android:textColor="#414245"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/take_photo"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="65dp"-->
+    <!--        android:background="@drawable/btn_top_left_right_corners_background"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="Take photo"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textColor="#414245"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:textStyle="normal"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/line"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@+id/cancel"-->
+    <!--        app:layout_constraintRight_toRightOf="@+id/cancel" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/line"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="1dp"-->
+    <!--        android:background="#1AE2E2E2"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/select_photo"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@+id/select_photo"-->
+    <!--        app:layout_constraintRight_toRightOf="@+id/select_photo" />-->
+
+
+    <!--    <com.google.android.material.button.MaterialButton-->
+    <!--        android:id="@+id/select_photo"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="65dp"-->
+    <!--        android:layout_marginBottom="12dp"-->
+    <!--        android:background="@drawable/btn_bottom_left_right_corners_background"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="select album"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:textColor="#414245"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:textStyle="normal"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/cancel"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@+id/cancel"-->
+    <!--        app:layout_constraintRight_toRightOf="@+id/cancel" />-->
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_background"
+        android:gravity="center"
+        android:text="cancel"
+        android:textAllCaps="false"
+        android:textColor="#414245"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_marginBottom="10dp"
+        tools:layout_marginLeft="20dp"
+        tools:layout_marginRight="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

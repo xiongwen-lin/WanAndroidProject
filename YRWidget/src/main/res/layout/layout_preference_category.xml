@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.apemans.quickui.preference.PreferenceCategory xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewCategory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:preferenceCategory_backGroundColor="@color/preferenceCategory_backGroundColor"
+    tools:preferenceCategory_title="CateGory"
+    app:preferenceCategory_titleSize="14sp"
+    app:preferenceCategory_titleTextColor="@color/preferenceCategory_titleTextColor" />

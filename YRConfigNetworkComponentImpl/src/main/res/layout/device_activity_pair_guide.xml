@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><!--~ /** * Copyright (c) 2021 海龙 Inc. All rights reserved. */ -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/theme_widget_style">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/device_pair_toolbar" />
+
+    <TextView
+        android:id="@+id/tvAddDeviceGuideInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="52dp"
+        tools:text="@string/indicator_tips"
+        android:textAlignment="center"
+        android:textColor="@color/theme_text_color"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/ivState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/device_guide_add_plug"
+        app:layout_constraintBottom_toTopOf="@id/btn_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddDeviceGuideInfo" />
+
+
+    <com.hjq.shape.view.ShapeTextView
+        android:id="@+id/btn_done"
+        style="@style/theme_shape_button_style"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/dp_60"
+        android:layout_marginEnd="@dimen/dp_60"
+        android:text="@string/ez_flash"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline0" />
+
+    <TextView
+        android:id="@+id/tvLightNoRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_24"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:gravity="center"
+        android:text="@string/ez_not_flash"
+        android:textColor="@color/theme_text_color"
+        android:textSize="@dimen/theme_text_second_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7871" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.929535" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.387" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

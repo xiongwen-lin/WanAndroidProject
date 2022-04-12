@@ -1,0 +1,98 @@
+import com.apemans.build.ARouterDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.LifeCycleDependency
+
+if (debugUserComponent) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply from: "$rootDir/buildSrc/Maven-publish-script.gradle"
+apply from: "$rootDir/buildSrc/packagingAAR.gradle"
+
+android {
+    /*resourcePrefix "mine_"*/
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        if (debugUserComponent) {
+            applicationId "com.smart.usercomponent"
+        }
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        /*testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"*/
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (debugUserComponent) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    //配置打包
+    packagingAAR(project, android)
+
+    //配置打包脚本信息
+    //configMavenPublish(project, android, "http://172.16.26.46:8081/repository/yourmavenname","your group id")
+    configMavenPublish(
+            project,
+            android,
+            "http://172.16.26.46:8081/repository/osaio",
+            "com.apemans")
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.firebase:firebase-inappmessaging:19.1.5'
+    kapt ARouterDependency.arouter_compiler
+    implementation ("com.apemans:YRUIBusiness:+")
+    implementation ("com.apemans:YRUserComponentApi:+")
+    implementation ("com.apemans:YRLogger:+")
+    implementation ("com.apemans:YREncryptSdk:+")
+    implementation ("com.apemans:YRCXSDK:+")
+//    implementation ("com.apemans:YRMessagePush:+")
+    implementation ("com.apemans:YRWidget:+")
+    implementation LifeCycleDependency.lifecycle_livedata_ktx
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //JsBridge
+    implementation 'com.github.caixingcun:JsBridge:2.1.3'
+}

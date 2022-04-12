@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setting.NameDeviceActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tdNameDeviceTip"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/theme_text_color"
+            android:textSize="@dimen/theme_primary_text_size"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/tdNameDeviceDeviceIcon"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_150"
+            android:layout_marginTop="@dimen/dp_32"
+            android:background="@drawable/td_printer_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tdNameDeviceTip" />
+
+        <com.apemans.quickui.editbox.SmartEditBox
+            android:id="@+id/tdNameDeviceEditor"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:ems="10"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:singleLine="true"
+            app:hint="@string/dev_sharing"
+            app:hintcolor="@color/theme_sub_text_color"
+            app:text=""
+            app:textcolor="@color/theme_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tdNameDeviceDeviceIcon" />
+
+        <TextView
+            android:id="@+id/tdNameDeviceRecommendNameTitle"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="Recommended name"
+            android:textColor="@color/theme_text_color"
+            android:textSize="@dimen/theme_level_2_title_size"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tdNameDeviceEditor" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tdNameDeviceRecommendNameList"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_10"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tdNameDeviceRecommendNameTitle"
+            app:spanCount="4" />
+
+        <Button
+            android:id="@+id/tdNameDeviceBtn"
+            style="@style/theme_apemans_normal_btn_style"
+            android:layout_width="@dimen/dp_256"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_120"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:layout_marginStart="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_60"
+            android:text="Start using"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tdNameDeviceRecommendNameList" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,82 @@
+import com.apemans.build.AndroidXDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.KotlinDependency
+import com.apemans.build.UnitTestDependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: "$rootDir/buildSrc/Maven-publish-script.gradle"
+apply from: "$rootDir/buildSrc/packagingAAR.gradle"
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    //配置打包
+    packagingAAR(project, android)
+
+    //配置打包脚本信息
+    //configMavenPublish(project, android, "http://172.16.26.46:8081/repository/yourmavenname","your group id")
+    configMavenPublish(
+            project,
+            android,
+            "http://172.16.26.46:8081/repository/osaio",
+            "com.apemans")
+}
+
+dependencies {
+    implementation AndroidXDependency.core_ktx
+    implementation AndroidXDependency.appcompat
+    testImplementation UnitTestDependency.junit
+    androidTestImplementation UnitTestDependency.androidxJunit
+    androidTestImplementation UnitTestDependency.espresso
+
+    implementation KotlinDependency.kotlin_stdlib
+    implementation KotlinDependency.CoroutinesCore
+    implementation KotlinDependency.CoroutinesAndroid
+
+    api 'no.nordicsemi.android:ble-common:2.2.0'
+    api 'no.nordicsemi.android:ble:2.2.4'
+    api 'no.nordicsemi.android:log:2.2.0'
+
+    //nordic蓝牙扫描兼容库
+    api 'no.nordicsemi.android.support.v18:scanner:1.4.3'
+
+    //The DFU Library is imported automatically from jcenter:
+    //DFU 就是设备固件升级的意思，而OTA（Over The Air）是实现DFU的一种方式而已，准确说，OTA的全称应该是OTA DFU，
+    //即通过空中无线方式实现设备固件升级
+    api 'no.nordicsemi.android:dfu:1.10.3'
+
+    //ConnectionStateLiveData中
+    // init {
+    //   value = ConnectionState.Disconnected(reason = ConnectionObserver.REASON_UNKNOWN)
+    //}
+    //导致BleManager初始化时，会先回调设备断开连接，故不集成
+    //api 'no.nordicsemi.android:ble-livedata:2.2.4'
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DialogBubbleCardView">
+        <attr name="bubble_dialog_backgroundColor" format="color" />
+        <attr name="bubble_triangleOrientation" format="integer" >
+            <enum name="bubble_top" value="0" />
+            <enum name="bubble_bottom" value="1" />
+            <enum name="bubble_left" value="2" />
+            <enum name="bubble_right" value="3" />
+        </attr>
+        <attr name="bubble_triangleRadius" format="integer" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="preference_item_splitLine">#20373F54</color>
+    <color name="preference_titleTextColor">@android:color/black</color>
+    <color name="preferenceCategory_titleTextColor">@android:color/black</color>
+    <color name="preferenceCategory_backGroundColor">#10373F54</color>
+</resources>

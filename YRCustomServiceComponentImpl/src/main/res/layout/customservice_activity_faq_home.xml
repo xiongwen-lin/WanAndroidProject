@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaecef"
+    tools:context=".CustomServiceActivity">
+
+    <ScrollView
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_20"
+            >
+        <TextView
+            android:id="@+id/tv_space"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_15"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvFAQ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:background="@drawable/bg_btn_on_normal_white"
+            app:layout_constraintTop_toBottomOf="@id/tv_space">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/containerFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginStart="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_110"
+            android:layout_marginEnd="@dimen/dp_80"
+
+            android:background="@drawable/bg_btn_on_press_blue"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/rcvFAQ">
+
+            <ImageView
+                android:id="@+id/ivPersonFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_feedback" />
+
+            <TextView
+                android:id="@+id/tvPersonFeedbackTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:text="@string/home_person_feedback"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/containerTip"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="@dimen/dp_20"
+
+            android:orientation="horizontal"
+
+            app:layout_constraintTop_toBottomOf="@+id/containerFeedback"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/help_faq_tip_one"
+                android:textColor="@color/grey_800"
+                android:textSize="11sp" />
+
+
+            <TextView
+                android:id="@+id/tvFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:text="Facebook"
+                android:textColor="@color/theme_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/help_faq_tip_two"
+                android:textColor="@color/grey_800"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="app.support@govicture.com"
+            android:textColor="@color/theme_color"
+            android:textSize="11sp"
+            app:layout_constraintTop_toBottomOf="@+id/containerTip" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

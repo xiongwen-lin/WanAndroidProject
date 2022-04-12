@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAECEF">
+
+    <!--标题栏-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/previewToolbar"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="60dp"
+        android:paddingLeft="@dimen/dp_12"
+        android:paddingRight="@dimen/dp_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/lay_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_12"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/header_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#414245"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/dp_8"
+                android:src="@drawable/ic_nav_select" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:src="@drawable/ic_nav_setting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--播放器-->
+    <com.nooie.sdk.media.NooieMediaPlayer
+        android:id="@+id/livePreviewPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintTop_toBottomOf="@id/previewToolbar"
+        app:layout_constraintBottom_toTopOf="@id/lay_menu"
+        />
+
+    <!--   视频模块辅助view    -->
+    <ImageView
+        android:id="@+id/viewActionFullscreen"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_viewfinder_full_on"
+        app:layout_constraintBottom_toBottomOf="@+id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@+id/livePreviewPlayer" />
+
+    <ImageView
+        android:id="@+id/viewActionFullscreenOff"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_viewfinder_full_off"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@+id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer" />
+
+    <TextView
+        android:id="@+id/livePreviewTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintEnd_toEndOf="@+id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@+id/livePreviewPlayer" />
+
+
+
+    <TextView
+        android:id="@+id/tvRecordTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:drawableLeft="@drawable/solid_circle_red"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center"
+        android:shadowColor="#FF6D6E71"
+        android:shadowDx="1.0"
+        android:shadowDy="1.0"
+        android:shadowRadius="1.0"
+        android:text="00:00:00"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_13"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer" />
+    <!--截图-->
+
+    <ImageView
+        android:id="@+id/ivThumbnail"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer"/>
+    <ImageView
+        android:id="@+id/ivDirectionControlBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/direction_control_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer" />
+
+    <ImageView
+        android:id="@+id/ivGestureLeftArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:src="@drawable/gesture_left_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivDirectionControlBg"
+        app:layout_constraintStart_toStartOf="@id/ivDirectionControlBg"
+        app:layout_constraintTop_toTopOf="@id/ivDirectionControlBg" />
+
+    <ImageView
+        android:id="@+id/ivGestureTopArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:rotation="90"
+        android:src="@drawable/gesture_left_arrow"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/ivDirectionControlBg"
+        app:layout_constraintStart_toStartOf="@id/ivDirectionControlBg"
+        app:layout_constraintTop_toTopOf="@id/ivDirectionControlBg" />
+
+    <ImageView
+        android:id="@+id/ivGestureRightArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:rotation="180"
+        android:src="@drawable/gesture_left_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivDirectionControlBg"
+        app:layout_constraintEnd_toEndOf="@id/ivDirectionControlBg"
+        app:layout_constraintTop_toTopOf="@id/ivDirectionControlBg" />
+
+    <ImageView
+        android:id="@+id/ivGestureBottomArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:rotation="270"
+        android:src="@drawable/gesture_left_arrow"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivDirectionControlBg"
+        app:layout_constraintEnd_toEndOf="@id/ivDirectionControlBg"
+        app:layout_constraintStart_toStartOf="@id/ivDirectionControlBg" />
+    <!--低电耗播放提示-->
+    <LinearLayout
+        android:id="@+id/containerLpDeviceController"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_44"
+        android:layout_marginEnd="@dimen/dp_44"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer">
+
+        <ImageView
+            android:id="@+id/btnLpDeviceRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_90"
+            android:paddingEnd="@dimen/dp_90"
+            android:paddingBottom="@dimen/dp_13"
+            android:scaleType="center"
+            android:src="@drawable/player_start_light_icon" />
+
+        <TextView
+            android:id="@+id/tvLpDeviceRestartTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_0"
+            android:layout_marginTop="@dimen/dp_0"
+            android:layout_marginEnd="@dimen/dp_0"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/nooie_play_lp_device_restart_tip"
+            android:gravity="center"
+            android:textColor="@color/theme_white"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+
+    <!--设备正在更新提示-->
+    <LinearLayout
+        android:id="@+id/UpgradingState"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_44"
+        android:layout_marginEnd="@dimen/dp_44"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_90"
+            android:paddingEnd="@dimen/dp_90"
+            android:paddingBottom="@dimen/dp_13"
+            android:scaleType="center"
+            android:src="@drawable/ic_list_upgrading" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_0"
+            android:layout_marginTop="@dimen/dp_0"
+            android:layout_marginEnd="@dimen/dp_0"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@string/tcp_preview_device_upgrade"
+            android:gravity="center"
+            android:textColor="@color/theme_warning_color"
+            android:textSize="@dimen/sp_12" />
+
+    </LinearLayout>
+    <!--滑动手势引导图-->
+
+    <ImageView
+        android:id="@+id/ivPanelComponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintStart_toStartOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer" />
+
+    <TextView
+        android:id="@+id/tvPanelTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/add_camera_swipe_to_see_more"
+        android:textColor="#E8E7E9"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivPanelComponent"
+        app:layout_constraintEnd_toEndOf="@id/ivPanelComponent"
+        app:layout_constraintStart_toStartOf="@id/ivPanelComponent" />
+
+    <!--横屏功能列表-->
+    <LinearLayout
+        android:id="@+id/lay_function_lands"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_btn_gray_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/livePreviewPlayer"
+        app:layout_constraintEnd_toEndOf="@id/livePreviewPlayer"
+        app:layout_constraintTop_toTopOf="@id/livePreviewPlayer">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcy_function_land"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+    <!--             -->
+
+    <!--操作栏-->
+    <LinearLayout
+        android:id="@+id/lay_menu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#414245"
+        app:layout_constraintTop_toBottomOf="@id/livePreviewPlayer"
+        tools:visibility="visible"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/ic_cloud"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/theme_color"
+            android:padding="@dimen/dp_7"
+            android:visibility="gone"
+            android:src="@drawable/ic_viewfinder_cloud_on"
+            tools:visibility="visible"/>
+
+        <ImageView
+            android:id="@+id/ic_sd_card"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_50"
+            android:padding="@dimen/dp_7"
+            android:visibility="gone"
+            android:src="@drawable/ic_viewfinder_sd_on"
+            tools:visibility="visible"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcy_time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvLive"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_12"
+            android:layout_marginStart="@dimen/dp_12"
+            android:gravity="center"
+            android:text="@string/tcp_preview_live"
+            android:textColor="@color/theme_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ic_close_timeline"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+
+            android:padding="@dimen/dp_7"
+            android:visibility="gone"
+            android:src="@drawable/ic_nav_cancel_on"
+            />
+        <!--小时刻度-->
+        <com.apemans.smartipcimpl.ui.ipcdevices.player.com.hdl.ruler.RulerView
+            android:id="@+id/timeline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+
+            />
+    </LinearLayout>
+
+
+
+    <!--功能栏-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_function"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_12"
+        app:layout_constraintTop_toBottomOf="@id/lay_menu" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_bottom_cloud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_bottom_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ipc_cloudstorage_title"
+            android:textColor="#414245"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@string/tcp_preview_bottom_tips"
+
+            android:textColor="@color/grey_400"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_bottom_title" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_account_cloud_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/lay_tpl_direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/device_activity_tpl_direction"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/lay_menu"
+        />
+    <!--下拉列表-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/deviceListContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC010C11"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/previewToolbar"
+        >
+
+        <!--标题栏-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/previewToolbar2"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="60dp"
+            android:paddingLeft="@dimen/dp_12"
+            android:paddingRight="@dimen/dp_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ic_back2"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/lay_header2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/header_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/theme_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:src="@drawable/ic_nav_select" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_setting2"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:src="@drawable/ic_nav_setting"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDeviceList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/previewToolbar2"
+            android:background="@color/white"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

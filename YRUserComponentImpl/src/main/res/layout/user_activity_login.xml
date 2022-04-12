@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/signInAndUpContainer"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_34"
+                app:layout_constraintBottom_toTopOf="@id/btnFbLogin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/tvLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_69"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:text="Join osaio"
+                    android:textColor="@color/theme_text_color"
+                    android:textSize="@dimen/sp_36"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:text="Operation System All in One"
+                    android:textColor="@color/theme_subtext_color"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLogo" />
+
+                <!--<TextView
+                    android:id="@+id/ivLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_69"
+                    android:drawableTop="@drawable/logo_welcome"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:text="@string/splash_app_name"
+                    android:textColor="@color/theme_subtext_color"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <!--app:eventId="@string/n_event_id_select_login"-->
+                <TextView
+                    android:id="@+id/btnSignInTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_75"
+                    android:layout_marginTop="@dimen/dp_60"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:lines="1"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_14"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_14"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/theme_text_color"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintEnd_toStartOf="@id/btnSignUpTag"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+                <View
+                    android:id="@+id/vSignInSelectedTag"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_2"
+                    android:background="@color/theme_text_color"
+                    app:layout_constraintEnd_toEndOf="@id/btnSignInTag"
+                    app:layout_constraintStart_toStartOf="@id/btnSignInTag"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignInTag" />
+
+                <!--app:eventId="@string/n_event_id_click_add_account"-->
+                <TextView
+                    android:id="@+id/btnSignUpTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_75"
+                    android:gravity="end"
+                    android:lines="1"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_14"
+                    android:paddingRight="@dimen/dp_20"
+                    android:paddingBottom="@dimen/dp_14"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/theme_text_color"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btnSignInTag"
+                    app:layout_constraintTop_toTopOf="@id/btnSignInTag" />
+
+                <View
+                    android:id="@+id/vSignUpSelectedTag"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_2"
+                    android:background="@color/theme_text_color"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/btnSignUpTag"
+                    app:layout_constraintStart_toStartOf="@id/btnSignUpTag"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignUpTag" />
+
+                <com.apemans.quickui.editbox.SmartEditBox
+                    android:id="@+id/ipvAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="@dimen/dp_50"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:gravity="center|start"
+                    app:button_gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignInTag"
+                    app:title="E-Mail" />
+
+                <com.apemans.quickui.editbox.SmartEditBox
+                    android:id="@+id/ipvPsd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="@dimen/dp_50"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:gravity="center|start"
+                    app:button_gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ipvAccount"
+                    app:title="Password" />
+
+                <ImageView
+                    android:id="@+id/ivSignInLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_button_loading"
+                    android:translationZ="@dimen/dp_6"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
+                    app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+                    app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignIn" />
+
+                <!--app:eventId="@string/n_event_id_click_login"-->
+                <Button
+                    android:id="@+id/btnSignIn"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginStart="@dimen/dp_75"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_75"
+                    android:background="@drawable/button_blue_gray_state_list_round"
+                    android:text="@string/submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ipvPsd" />
+
+                <TextView
+                    android:id="@+id/tvForgetPsd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_28"
+                    android:layout_marginEnd="@dimen/dp_0"
+                    android:layout_marginBottom="@dimen/dp_28"
+                    android:gravity="center"
+                    android:text="@string/sign_in_forget_pwd"
+                    android:textColor="@color/theme_text_color"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/btnSignIn"
+                    app:layout_constraintStart_toStartOf="@id/btnSignIn"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+                <com.apemans.quickui.editbox.SmartEditBox
+                    android:id="@+id/ipvSelectCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="@dimen/dp_50"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:gravity="center|start"
+                    android:visibility="gone"
+                    app:button_gravity="center"
+                    app:hint="select country"
+                    android:scaleType="centerInside"
+                    app:arrow_icon="@drawable/arrow_down"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSignInTag"
+                    app:title="Country" />
+
+                <com.apemans.quickui.editbox.SmartEditBox
+                    android:id="@+id/ipvRegisterAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="@dimen/dp_50"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:gravity="center|start"
+                    android:visibility="gone"
+                    app:button_gravity="center"
+                    app:hint="input account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ipvSelectCountry"
+                    app:title="account" />
+
+                <com.apemans.quickui.editbox.SmartEditBox
+                    android:id="@+id/tvRegisterCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingRight="@dimen/dp_50"
+                    android:paddingLeft="@dimen/dp_50"
+                    android:gravity="center|start"
+                    android:visibility="gone"
+                    app:button_gravity="center"
+                    app:hint="验证码"
+                    app:right_text_color="@color/theme_green_subtext_color"
+                    app:right_text="发送验证码"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ipvRegisterAccount"
+                    app:title="验证码" />
+
+                <CheckBox
+                    android:id="@+id/cbPrivacy"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:gravity="bottom|left"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvRegisterCode" />
+
+                <TextView
+                    android:id="@+id/tvPrivacy"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_0"
+                    android:layout_marginEnd="@dimen/dp_24"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/sign_up_create_account_tip"
+                    android:textColor="@color/theme_text_color"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/ipvSelectCountry"
+                    app:layout_constraintStart_toEndOf="@id/cbPrivacy"
+                    app:layout_constraintTop_toTopOf="@id/cbPrivacy" />
+
+                <ImageView
+                    android:id="@+id/ivSignUpLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_button_loading"
+                    android:translationZ="@dimen/dp_6"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
+                    app:layout_constraintEnd_toEndOf="@+id/btnSignUp"
+                    app:layout_constraintStart_toStartOf="@+id/btnSignUp"
+                    app:layout_constraintTop_toTopOf="@+id/btnSignUp" />
+
+                <!--app:eventId="@string/n_event_id_click_register"-->
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginStart="@dimen/dp_75"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_75"
+                    android:background="@drawable/button_blue_gray_state_list_round"
+                    android:text="@string/submit"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrivacy" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/btnFbLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_75"
+                android:layout_marginBottom="@dimen/dp_34"
+                android:src="@drawable/logo_welcome"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/vThirdLoginDivider"
+                app:layout_constraintEnd_toStartOf="@id/btnGoogleLogin"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/btnGoogleLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:src="@drawable/logo_welcome"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/btnTwitterLogin"
+                app:layout_constraintStart_toEndOf="@id/btnFbLogin"
+                app:layout_constraintTop_toTopOf="@id/btnFbLogin" />
+
+            <ImageView
+                android:id="@+id/btnTwitterLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_75"
+                android:src="@drawable/logo_welcome"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnGoogleLogin"
+                app:layout_constraintTop_toTopOf="@id/btnFbLogin" />
+
+            <View
+                android:id="@+id/vThirdLoginDivider"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginStart="@dimen/dp_75"
+                android:layout_marginEnd="@dimen/dp_75"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:alpha="0.5"
+                android:background="@color/theme_text_color"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/tvThirdLoginTip"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvThirdLoginTip"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_75"
+                android:layout_marginEnd="@dimen/dp_75"
+                android:layout_marginBottom="@dimen/dp_28"
+                android:gravity="center"
+                android:text="@string/sign_in_third_login_tip"
+                android:textColor="@color/font_white_normal"
+                android:textSize="@dimen/sp_12"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivExistIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_0"
+                android:layout_marginEnd="@dimen/dp_0"
+                android:padding="@dimen/dp_24"
+                android:src="@drawable/close_gray"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.apemans.usercomponent.user.widget.WebViewDialogView
+        android:id="@+id/wdvSignIn"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

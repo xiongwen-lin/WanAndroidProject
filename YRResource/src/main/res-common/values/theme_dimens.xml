@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /** * Copyright (c) 2021 海龙 Inc. All rights reserved. */
+  -->
+<resources>
+    <!--一级标题大小-->
+    <dimen name="theme_level_1_title_size">18sp</dimen>
+    <!--二级标题大小-->
+    <dimen name="theme_level_2_title_size">16sp</dimen>
+    <!--三级标题大小-->
+    <dimen name="theme_level_3_title_size">14sp</dimen>
+    <!--主文本大小-->
+    <dimen name="theme_primary_text_size">14sp</dimen>
+    <!--次级文本大小-->
+    <dimen name="theme_secondary_text_size">12sp</dimen>
+    <!--按钮文本大小-->
+    <dimen name="theme_btn_text_size">16sp</dimen>
+    <!--导航栏高度-->
+    <dimen name="theme_toolbar_height">55dp</dimen>
+    <!--按钮高度-->
+    <dimen name="theme_button_height">44dp</dimen>
+    <!--按钮阴影大小-->
+    <dimen name="theme_button_shadow_size">6dp</dimen>
+    <!--按钮圆角半径大小-->
+    <dimen name="theme_button_radius_size">10dp</dimen>
+    <!--卡片圆角半径大小-->
+    <dimen name="theme_card_radius_size">10dp</dimen>
+
+    <!-- 以下不属于主题定义尺寸，请勿使用 -->
+    <!--文本Text大小-->
+    <dimen name="theme_text_size">18sp</dimen>
+    <!--文本提示类/sub Text 大小-->
+    <dimen name="theme_text_second_size">14sp</dimen>
+    <!--标题大小-->
+    <dimen name="theme_title_size">18sp</dimen>
+    <!--子标题大小-->
+    <dimen name="theme_title_sub_size">16sp</dimen>
+</resources>

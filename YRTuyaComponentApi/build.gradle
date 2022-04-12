@@ -1,0 +1,58 @@
+import com.apemans.build.ARouterDependency
+import com.apemans.build.AndroidXDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.KotlinDependency
+import com.apemans.build.UnitTestDependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+    kapt ARouterDependency.arouter_compiler
+    implementation ("com.apemans:YRRouter:+")
+
+    //tuya
+    //api 'com.alibaba:fastjson:1.2.78' 涂鸦不能更新最新版，适配不了
+    api 'com.alibaba:fastjson:1.1.67.android'
+    api 'com.squareup.okhttp3:okhttp-urlconnection:3.14.9'
+
+    // App SDK 最新稳定安卓版：
+    api 'com.tuya.smart:tuyasmart:3.28.5'
+    api ('com.tuya.smart:tuyasmart-bizbundle-panel:3.27.5-4'){
+        exclude group: 'com.tuya.smart', module: 'tuyasmart-panel'
+    }
+}

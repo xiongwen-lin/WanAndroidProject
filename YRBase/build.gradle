@@ -1,0 +1,85 @@
+import com.apemans.build.*
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: "$rootDir/buildSrc/Maven-publish-script.gradle"
+apply from: "$rootDir/buildSrc/packagingAAR.gradle"
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+        versionCode 1
+        versionName "1.0.8"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    //配置打包
+    packagingAAR(project, android)
+
+    //配置打包脚本信息
+    //configMavenPublish(project, android, "http://172.16.26.46:8081/repository/yourmavenname","your group id")
+    configMavenPublish(
+            project,
+            android,
+            "http://172.16.26.46:8081/repository/osaio",
+            "com.apemans")
+}
+
+dependencies {
+    testImplementation UnitTestDependency.junit
+    androidTestImplementation UnitTestDependency.androidxJunit
+    androidTestImplementation UnitTestDependency.espresso
+
+    api AndroidXDependency.core_ktx
+    api AndroidXDependency.fragment_ktx
+    api AndroidXDependency.appcompat
+    api AndroidXDependency.material
+    api ThridpartDependencyKt.Coil
+
+    //Kotlin support
+    api KotlinDependency.kotlin_stdlib
+    api KotlinDependency.CoroutinesCore
+    api KotlinDependency.CoroutinesAndroid
+
+    //Lifecycle
+    api LifeCycleDependency.lifecycle_common
+    api LifeCycleDependency.lifecycle_runtime_ktx
+    api LifeCycleDependency.lifecycle_viewmodel_ktx
+    api LifeCycleDependency.lifecycle_livedata_ktx
+    api LifeCycleDependency.lifecycle_runtime_ktx
+
+    //扩展函数
+    api ThridpartDependencyKt.DylanCaiCoding_Longan
+    api ThridpartDependencyKt.DylanCaiCoding_Longan_Design
+    api ThridpartDependencyKt.MMKV
+
+    //Gson
+    api ThridpartDependencyKt.Gson
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SuperToolbar">
+        <attr name="superToolbar_title" format="string" />
+        <attr name="superToolbar_titleTextColor" format="color" />
+        <attr name="superToolbar_titleSize" format="dimension" />
+        <attr name="superToolbar_rightIcon" format="reference" />
+        <attr name="superToolbar_navIcon" format="reference" />
+        <attr name="superToolbar_showNavIcon" format="boolean" />
+        <attr name="superToolbar_showBottomLine" format="boolean" />
+        <attr name="superToolbar_bottomLineColor" format="color" />
+    </declare-styleable>
+
+    <dimen name="supertoolbar_default_title_fontsize">18sp</dimen>
+    <color name="supertoolbar_default_title_color">@android:color/black</color>
+    <dimen name="supertoolbar_default_height">55dp</dimen>
+    <color name="supertoolbar_default_bottom_line_color">#20373F54</color>
+
+</resources>

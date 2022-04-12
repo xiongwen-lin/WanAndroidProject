@@ -1,0 +1,48 @@
+import com.apemans.build.AndroidXDependency
+import com.apemans.build.BuildConfig
+import com.apemans.build.KotlinDependency
+import com.apemans.build.UnitTestDependency
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion BuildConfig.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildConfig.minSdkVersion
+        targetSdkVersion BuildConfig.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation AndroidXDependency.core_ktx
+    implementation AndroidXDependency.appcompat
+    implementation AndroidXDependency.material
+    testImplementation UnitTestDependency.junit
+    androidTestImplementation UnitTestDependency.androidxJunit
+    androidTestImplementation UnitTestDependency.espresso
+
+    implementation KotlinDependency.kotlin_stdlib
+    implementation KotlinDependency.CoroutinesCore
+    implementation KotlinDependency.CoroutinesAndroid
+}
